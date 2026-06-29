@@ -32,5 +32,9 @@ def encuesta():
         flash(f"¡Voto registrado! Has votado por: {voto_plato}")
         return redirect(url_for("inicio"))
 
-if __name__ == "__main__":
-    app.run(debug=True)
+import os
+
+if __name__ == '__main__':
+    # Lee el puerto dinámico de Render o usa el 5000 por defecto de forma local
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
