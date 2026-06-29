@@ -1,0 +1,115 @@
+/* Colores Oficiales Universidad Científica del Sur */
+:root {
+    --azul-cientifica-principal: #3a75c4; /* El azul de "CIENTÍFICA" */
+    --azul-cientifica-oscuro: #0f4c92;    /* El azul oscuro de la letra "A" al final */
+    --azul-cientifica-claro: #5b9bd5;     /* El tono degradado del inicio "CIE" */
+    --naranja-cientifica: #f39200;        /* El naranja/dorado de "DEL SUR" */
+    --gris-fondo: #f4f7f6;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Modificar la barra de navegación para que use el azul institucional */
+.bg-success {
+    background-color: var(--azul-cientifica-oscuro) !important;
+}
+
+/* Detalles de los enlaces activos en la navegación */
+.navbar-dark .navbar-nav .nav-link.active {
+    border-bottom: 3px solid var(--naranja-cientifica);
+}
+
+/* Estilos de las Tarjetas para que combinen */
+.card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(58, 117, 196, 0.1);
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(15, 76, 146, 0.12) !important;
+    border-color: var(--azul-cientifica-principal);
+}
+/* Contenedor principal de la imagen de fondo */
+.hero-section {
+    position: relative;
+    background-image: url('../img/fondo-cafeteria.jpg'); /* Carga tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Filtro azul corporativo encima de la foto para que se lea perfecto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Mezcla el azul oscuro (#0f4c92) y el azul claro (#3a75c4) con transparencia */
+    background: linear-gradient(135deg, rgba(15, 76, 146, 0.88), rgba(58, 117, 196, 0.78));
+    z-index: 1;
+}
+
+/* Mantiene las letras por encima del filtro azul */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+/* Botones personalizados con el contraste azul y naranja */
+.btn-cientifica {
+    background-color: var(--azul-cientifica-principal);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cientifica:hover {
+    background-color: var(--azul-cientifica-oscuro);
+    color: white;
+}
+
+/* Títulos principales */
+.text-success {
+    color: var(--azul-cientifica-oscuro) !important;
+}
+.navbar {
+    border-bottom: 4px solid var(--naranja-cientifica);
+}
+/* Contenedor estilo píldora gigante */
+.logo-container {
+    background-color: #ffffff;
+    padding: 15px 45px;                         /* Aumentamos el colchón interno */
+    border-radius: 60px;                        /* Bordes más curvos para la píldora grande */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Sombra con más carácter */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    top: 8px;                                   /* Lo subimos un poquito para equilibrar el peso visual */
+    left: 25px;                                 
+    z-index: 1000;                              
+    
+    transition: all 0.2s ease;
+}
+
+/* El logotipo al máximo esplendor */
+.logo-nav {
+    height: 160px !important;                    /* ¡Subimos de 110px a 160px! */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Efecto interactivo al pasar el mouse */
+.logo-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
